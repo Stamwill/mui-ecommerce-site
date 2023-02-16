@@ -2,6 +2,7 @@ import * as React from 'react'
 import Head from 'next/head'
 import { GlobalProvider } from 'api/GlobalContext'
 import 'styles/globals.css'
+import NavBar from 'components/NavBar'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -10,7 +11,9 @@ export default function App({ Component, pageProps }) {
         <title>Mui Ecommerce Site</title>
       </Head>
 
-      <header>Future Navbar</header>
+      <header>
+        <NavBar />
+      </header>
 
       <main>
         <Component {...pageProps} />
