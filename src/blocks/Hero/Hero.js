@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
-import Image from 'next/image'
 import { Typography } from '@mui/material'
+import Image from 'next/image'
 
 const HeroRoot = styled('section')(({ theme }) => ({
   position: 'relative',
