@@ -14,7 +14,7 @@ const FlexStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(1),
 }))
 
-const Container = styled('div')(({ theme }) => ({
+const IconContainer = styled('div')(({ theme }) => ({
   width: '4rem',
   display: 'flex',
   alignItems: 'center',
@@ -43,12 +43,12 @@ export default function Navbar() {
 
             <Search />
 
-            <Container>
+            <IconContainer>
               <HideSmall>
                 <ShoppingBasketIcon />
               </HideSmall>
               <MenuIcon sx={{ fontSize: '2rem' }} />
-            </Container>
+            </IconContainer>
           </Toolbar>
         </FlexStyle>
       </AppBar>
