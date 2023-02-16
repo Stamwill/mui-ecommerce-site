@@ -1,7 +1,7 @@
 import * as React from 'react'
+import Image from 'next/image'
 import { styled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
-import Image from 'next/image'
 
 const HeroRoot = styled('section')(({ theme }) => ({
   position: 'relative',
@@ -12,7 +12,7 @@ const HeroRoot = styled('section')(({ theme }) => ({
   height: '60vh',
 }))
 
-const ImageContainer = styled('image')(({ theme }) => ({
+const ImageContainer = styled('div')(({ theme }) => ({
   position: 'absolute',
   zIndex: '-1',
   width: '100%',
