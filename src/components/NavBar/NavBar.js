@@ -15,11 +15,18 @@ const FlexStyle = styled('div')(({ theme }) => ({
 }))
 
 const Container = styled('div')(({ theme }) => ({
-  width: 'theme',
+  width: '4rem',
   display: 'flex',
+  alignItems: 'center',
   justifyContent: 'space-between',
   padding: theme.spacing(0),
-  [theme.breakpoints.down('md')]: {
+  [theme.breakpoints.down('sm')]: {
+    justifyContent: 'center',
+  },
+}))
+
+const HideSmall = styled('div')(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
     display: 'none',
   },
 }))
@@ -37,8 +44,10 @@ export default function Navbar() {
             <Search />
 
             <Container>
-              <MenuIcon />
-              <ShoppingBasketIcon />
+              <HideSmall>
+                <ShoppingBasketIcon />
+              </HideSmall>
+              <MenuIcon sx={{ fontSize: '2rem' }} />
             </Container>
           </Toolbar>
         </FlexStyle>
