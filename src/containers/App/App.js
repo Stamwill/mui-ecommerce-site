@@ -1,3 +1,4 @@
+import Hero from 'blocks/Hero'
 import * as React from 'react'
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
       </header>
 
       <div>
+        <Hero />
         <h2>Main</h2>
       </div>
     </div>
