@@ -31,6 +31,7 @@ function Hero(props) {
           style={{ objectFit: 'cover' }}
         />
       </ImageContainer>
+
       <Typography variant="h2" component="h1" color="white">
         Welcome to Clothes
       </Typography>
