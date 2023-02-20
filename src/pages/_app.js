@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { GlobalProvider } from 'api/GlobalContext'
-import NavBar from 'blocks/NavBar'
+import Navbar from 'blocks/Navbar'
 import 'styles/globals.css'
 import Footer from 'blocks/Footer'
 
@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <header>
-        <NavBar />
+        <Navbar />
       </header>
 
       <main>
