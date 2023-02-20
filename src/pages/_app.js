@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { GlobalProvider } from 'api/GlobalContext'
 import NavBar from 'blocks/NavBar'
 import 'styles/globals.css'
+import Footer from 'blocks/Footer'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -18,6 +19,8 @@ export default function App({ Component, pageProps }) {
       <main>
         <Component {...pageProps} />
       </main>
+
+      <Footer />
     </GlobalProvider>
   )
 }
