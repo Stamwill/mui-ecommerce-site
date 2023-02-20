@@ -1,7 +1,7 @@
 import React from 'react'
+import { CarouselItemData } from 'api/mock'
 import Carousel from 'react-material-ui-carousel'
 import CarouselItem from 'components/CarouselItem'
-import { CarouselItemData } from 'api/mock'
 
 function MuiCarousel() {
   return (
