@@ -1,7 +1,8 @@
 import * as React from 'react'
+import { Container } from '@mui/system'
 import Hero from 'blocks/Hero'
 import MuiCarousel from 'blocks/MuiCarousel'
-import { Container } from '@mui/system'
+import Showcase from 'blocks/Showcase'
 
 const App = () => {
   return (
@@ -16,6 +17,8 @@ const App = () => {
           <MuiCarousel />
         </Container>
       </div>
+
+      <Showcase />
     </div>
   )
 }
