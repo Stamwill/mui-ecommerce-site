@@ -1,9 +1,6 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
+import { AppBar, Box, Typography, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import Search from 'components/Search'
@@ -31,7 +28,7 @@ const HideSmall = styled('div')(({ theme }) => ({
   },
 }))
 
-export default function Navbar() {
+function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'black' }}>
@@ -55,3 +52,5 @@ export default function Navbar() {
     </Box>
   )
 }
+
+export default Navbar
