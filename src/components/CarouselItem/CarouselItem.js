@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-import { Paper } from '@mui/material'
-import { styled } from '@mui/material'
+import { Paper, styled, Typography } from '@mui/material'
 
 const ImageContainer = styled('div')(({ theme }) => ({
   position: 'absolute',
@@ -13,12 +12,18 @@ const ImageContainer = styled('div')(({ theme }) => ({
 function CarouselItem(props) {
   const { name, img, description } = props
   return (
-    <Paper sx={{ position: 'relative' }}>
-      <h2>{name}</h2>
+    <Paper elevation={0} sx={{ position: 'relative', marginTop: '2rem' }}>
+      <Typography variant="h4" component="h2">
+        {name}
+      </Typography>
+
       <ImageContainer>
         <Image src={img} fill alt="clothes" style={{ objectFit: 'cover' }} />
       </ImageContainer>
-      <p>{description}</p>
+
+      <Typography variant="p" component="p" sx={{ padding: '0 0 1rem 0.1rem' }}>
+        {description}
+      </Typography>
     </Paper>
   )
 }
