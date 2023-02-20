@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import { navigation } from 'api/mock'
 import { styled } from '@mui/material'
 
@@ -19,7 +20,7 @@ function Footer() {
     <FooterRoot>
       {navigation.map((item, idx) => (
         <NavItem key={idx}>
-          <a href={item.href}>{item.label}</a>
+          <Link href={item.href}>{item.label}</Link>
         </NavItem>
       ))}
     </FooterRoot>
