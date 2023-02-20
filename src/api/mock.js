@@ -11,13 +11,25 @@ export const CarouselItemData = [
   },
 ]
 
-export const MainNav = [
+export const navigation = [
   {
     label: 'Women',
     href: '#',
   },
   {
     label: 'Men',
+    href: '#',
+  },
+  {
+    label: 'Kids',
+    href: '#',
+  },
+  {
+    label: 'Sports',
+    href: '#',
+  },
+  {
+    label: 'Sales',
     href: '#',
   },
 ]
