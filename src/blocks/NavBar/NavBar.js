@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
 import { AppBar, Box, Typography, Toolbar } from '@mui/material'
+import Link from 'next/link'
 import MenuIcon from '@mui/icons-material/Menu'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
+import { navigation } from 'api/mock'
 import Search from 'components/Search'
 
 const FlexStyle = styled('div')(({ theme }) => ({
@@ -22,8 +24,17 @@ const IconContainer = styled('div')(({ theme }) => ({
   },
 }))
 
-const HideSmall = styled('div')(({ theme }) => ({
-  [theme.breakpoints.down('sm')]: {
+const MainNav = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-evenly',
+  width: '50%',
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
+}))
+
+const HideBig = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('md')]: {
     display: 'none',
   },
 }))
@@ -40,11 +51,19 @@ function Navbar() {
 
             <Search />
 
+            <MainNav>
+              {navigation.map((label, idx) => (
+                <div key={idx}>
+                  <Link href={label.href}>{label.label}</Link>
+                </div>
+              ))}
+            </MainNav>
+
             <IconContainer>
-              <HideSmall>
-                <ShoppingBasketIcon />
-              </HideSmall>
-              <MenuIcon sx={{ fontSize: '2rem' }} />
+              <ShoppingBasketIcon />
+              <HideBig>
+                <MenuIcon sx={{ fontSize: '2rem' }} />
+              </HideBig>
             </IconContainer>
           </Toolbar>
         </FlexStyle>
