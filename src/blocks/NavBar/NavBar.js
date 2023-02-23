@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { styled } from '@mui/material/styles'
-import { AppBar, Box, Typography, Toolbar } from '@mui/material'
-import Link from 'next/link'
+import { AppBar, Box, Typography, Toolbar, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
+import ShoppingCart from '@mui/icons-material/ShoppingCart'
+import Link from 'next/link'
 import { navigation } from 'api/mock'
 import Search from 'components/Search'
 
@@ -14,11 +14,8 @@ const FlexStyle = styled('div')(({ theme }) => ({
 }))
 
 const IconContainer = styled('div')(({ theme }) => ({
-  width: '4rem',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: theme.spacing(0),
   [theme.breakpoints.down('sm')]: {
     justifyContent: 'center',
   },
@@ -44,7 +41,7 @@ function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'black' }}>
         <FlexStyle>
-          <Toolbar sx={{ justifyContent: 'space-between', width: '100%' }}>
+          <Toolbar sx={{ justifyContent: 'space-between', width: '100%', minHeight: '64px' }}>
             <Typography variant="h6" noWrap component="div" sx={{ display: { sm: 'block' } }}>
               Clothes
             </Typography>
@@ -60,10 +57,17 @@ function Navbar() {
             </MainNav>
 
             <IconContainer>
-              <ShoppingBasketIcon />
-              <HideBig>
-                <MenuIcon sx={{ fontSize: '2rem' }} />
-              </HideBig>
+              <Box sx={{ display: 'flex' }}>
+                <IconButton size="medium" color="inherit">
+                  <ShoppingCart />
+                </IconButton>
+
+                <HideBig>
+                  <IconButton size="large" color="inherit">
+                    <MenuIcon />
+                  </IconButton>
+                </HideBig>
+              </Box>
             </IconContainer>
           </Toolbar>
         </FlexStyle>
