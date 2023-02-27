@@ -1,10 +1,10 @@
 import * as React from 'react'
+import { navigation } from 'api/mock'
 import { styled } from '@mui/material/styles'
 import { AppBar, Box, Typography, Toolbar, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import ShoppingCart from '@mui/icons-material/ShoppingCart'
 import Link from 'next/link'
-import { navigation } from 'api/mock'
 import Search from 'components/Search'
 
 const FlexStyle = styled('div')(({ theme }) => ({
@@ -50,9 +50,9 @@ function Navbar() {
 
             <MainNav>
               {navigation.map((label, idx) => (
-                <div key={idx}>
-                  <Link href={label.href}>{label.label}</Link>
-                </div>
+                <Link href={label.href} key={idx}>
+                  {label.label}
+                </Link>
               ))}
             </MainNav>
 
