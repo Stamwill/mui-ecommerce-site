@@ -1,23 +1,23 @@
 import * as React from 'react'
-import styled from '@emotion/styled'
-import { showcaseMen } from 'api/mock'
+import { Grid } from '@mui/material'
 import ShowcaseItem from 'components/ShowcaseItem'
 
-const ShowcaseLayout = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexWrap: 'wrap',
-  gap: '1rem',
-  padding: '2rem 5rem',
-}))
-
-function Showcase() {
+function Showcase(props) {
+  const { content } = props
   return (
-    <section style={{ position: 'relative' }}>
-      <ShowcaseLayout>
-        {showcaseMen.map((item, idx) => (
-          <ShowcaseItem {...item} key={idx} />
+    <section>
+      <Grid
+        container
+        spacing={{ xs: 2, md: 3, lg: 15 }}
+        sx={{ display: 'flex', justifyContent: 'center' }}
+        maxWidth="xl"
+      >
+        {content.map((item, idx) => (
+          <Grid item xs={6} sm={6} md={3} key={idx}>
+            <ShowcaseItem {...item} />
+          </Grid>
         ))}
-      </ShowcaseLayout>
+      </Grid>
     </section>
   )
 }
