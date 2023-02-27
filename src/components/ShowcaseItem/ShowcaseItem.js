@@ -1,26 +1,37 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { Typography } from '@mui/material'
-import styled from '@emotion/styled'
+import { styled } from '@mui/material'
 
 const ImgContainer = styled('div')(({ theme }) => ({
   position: 'relative',
-  height: '200px',
-  width: '200px',
+  height: '150px',
+  width: '150px',
+  [theme.breakpoints.up('md')]: {
+    height: '200px',
+    width: '200px',
+  },
 }))
 
 function Showcase(props) {
   const { name, img } = props
 
   return (
-    <section style={{ position: 'relative' }}>
-      <div>
-        <Typography>{name}</Typography>
-
-        <ImgContainer>
-          <Image src={img} alt="test" fill style={{ objectFit: 'cover' }} />
-        </ImgContainer>
-      </div>
+    <section
+      style={{
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <ImgContainer>
+        <Image src={img} alt="test" fill style={{ objectFit: 'cover' }} />
+      </ImgContainer>
+      <Typography sx={{ marginTop: '0.775rem' }} variant="button" component="h5">
+        Clothing Title
+      </Typography>
+      <Typography sx={{ paddingBottom: '1rem', textAlign: 'center' }}>{name}</Typography>
     </section>
   )
 }
