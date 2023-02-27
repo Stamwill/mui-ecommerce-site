@@ -9,6 +9,20 @@ const FooterRoot = styled('footer')(({ theme }) => ({
   color: 'white',
   backgroundColor: 'black',
   padding: '2rem',
+  [theme.breakpoints.up('md')]: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+}))
+
+const NavItems = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  [theme.breakpoints.up('md')]: {
+    width: '50%',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
 }))
 
 const NavItem = styled('div')(({ theme }) => ({
@@ -18,11 +32,13 @@ const NavItem = styled('div')(({ theme }) => ({
 function Footer() {
   return (
     <FooterRoot>
-      {navigation.map((item, idx) => (
-        <NavItem key={idx}>
-          <Link href={item.href}>{item.label}</Link>
-        </NavItem>
-      ))}
+      <NavItems>
+        {navigation.map((item, idx) => (
+          <NavItem key={idx}>
+            <Link href={item.href}>{item.label}</Link>
+          </NavItem>
+        ))}
+      </NavItems>
     </FooterRoot>
   )
 }
