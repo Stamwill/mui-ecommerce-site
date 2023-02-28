@@ -7,6 +7,9 @@ const ImgContainer = styled('div')(({ theme }) => ({
   position: 'relative',
   height: '150px',
   width: '150px',
+  '&:hover': {
+    cursor: 'pointer',
+  },
   [theme.breakpoints.up('md')]: {
     height: '200px',
     width: '200px',
