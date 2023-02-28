@@ -18,18 +18,13 @@ const App = () => {
         <MuiCarousel />
       </Container>
 
-      {/* Containers to be made into block and mapped to reduce DRY code  */}
       <Container>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Typography variant="h4" component="h4" sx={{ marginBottom: '2rem' }}>
-            Mens
+            Men
           </Typography>
           <Showcase content={showcaseMen} />
-        </Box>
-      </Container>
 
-      <Container>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Typography variant="h4" component="h4" sx={{ marginBottom: '2rem' }}>
             Womens
           </Typography>
