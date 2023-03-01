@@ -1,11 +1,20 @@
 import * as React from 'react'
-import { showcaseMen, showcaseWomen } from 'api/mock'
-import { Container, Box } from '@mui/system'
+import { showcaseMen, showcaseWomen, homeImageDivider } from 'api/mock'
+import { styled, Container, Box } from '@mui/system'
 import Hero from 'blocks/Hero'
 import MuiCarousel from 'blocks/MuiCarousel'
 import Showcase from 'blocks/Showcase'
 import { Typography } from '@mui/material'
+import Image from 'next/image'
 
+const ImgContainer = styled('div')(({ theme }) => ({
+  position: 'relative',
+  width: '100%',
+  height: '70vh',
+  margin: '2rem 0 4rem',
+}))
+
+console.log(homeImageDivider)
 const App = () => {
   return (
     <div>
@@ -31,6 +40,10 @@ const App = () => {
           <Showcase content={showcaseWomen} />
         </Box>
       </Container>
+
+      <ImgContainer>
+        <Image src={homeImageDivider} fill alt="test" style={{ objectFit: 'cover' }} />
+      </ImgContainer>
     </div>
   )
 }
