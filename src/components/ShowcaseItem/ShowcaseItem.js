@@ -29,7 +29,7 @@ function Showcase(props) {
       }}
     >
       <ImgContainer>
-        <Image src={img} alt="test" fill style={{ objectFit: 'cover' }} />
+        <Image src={img} alt="test" fill sizes="(max-width: 100%)" style={{ objectFit: 'cover' }} />
       </ImgContainer>
 
       <Typography sx={{ marginTop: '0.775rem' }} variant="button" component="h5">
