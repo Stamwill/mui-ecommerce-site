@@ -17,7 +17,7 @@ const ImgContainer = styled('div')(({ theme }) => ({
 }))
 
 function Showcase(props) {
-  const { name, img } = props
+  const { title, description, img } = props
 
   return (
     <section
@@ -31,10 +31,12 @@ function Showcase(props) {
       <ImgContainer>
         <Image src={img} alt="test" fill style={{ objectFit: 'cover' }} />
       </ImgContainer>
+
       <Typography sx={{ marginTop: '0.775rem' }} variant="button" component="h5">
-        Clothing Title
+        {title}
       </Typography>
-      <Typography sx={{ paddingBottom: '1rem', textAlign: 'center' }}>{name}</Typography>
+
+      <Typography sx={{ paddingBottom: '1rem', textAlign: 'center' }}>{description}</Typography>
     </section>
   )
 }
