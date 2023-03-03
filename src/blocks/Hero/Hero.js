@@ -32,7 +32,12 @@ function Hero(props) {
         />
       </ImageContainer>
 
-      <Typography variant="h2" component="h1" color="white">
+      <Typography
+        variant="h2"
+        component="h1"
+        color="white"
+        sx={{ textAlign: 'center', padding: '0 2rem' }}
+      >
         Welcome to Clothes
       </Typography>
     </HeroRoot>
