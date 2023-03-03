@@ -8,7 +8,7 @@ const FooterRoot = styled('footer')(({ theme }) => ({
   flexDirection: 'column',
   color: 'white',
   backgroundColor: 'black',
-  padding: '2rem',
+  padding: theme.spacing(2),
   [theme.breakpoints.up('md')]: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
@@ -26,7 +26,7 @@ const NavItems = styled('div')(({ theme }) => ({
 }))
 
 const NavItem = styled('div')(({ theme }) => ({
-  margin: '0.775rem 0',
+  margin: theme.spacing(1.5),
 }))
 
 function Footer() {
