@@ -32,11 +32,13 @@ function Showcase(props) {
         <Image src={img} alt="test" fill sizes="(max-width: 100%)" style={{ objectFit: 'cover' }} />
       </ImgContainer>
 
-      <Typography sx={{ marginTop: '0.775rem' }} variant="button" component="h5">
+      <Typography mt={2} variant="button" component="h5">
         {title}
       </Typography>
 
-      <Typography sx={{ paddingBottom: '1rem', textAlign: 'center' }}>{description}</Typography>
+      <Typography pb={2} sx={{ textAlign: 'center' }}>
+        {description}
+      </Typography>
     </section>
   )
 }
