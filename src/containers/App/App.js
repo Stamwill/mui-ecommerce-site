@@ -11,7 +11,7 @@ const ImgContainer = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
   height: '70vh',
-  margin: '2rem 0 4rem',
+  margin: theme.spacing(2, 0, 5),
 }))
 
 const App = () => {
@@ -28,12 +28,12 @@ const App = () => {
 
       <Container>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Typography variant="h4" component="h4" sx={{ marginBottom: '2rem' }}>
+          <Typography variant="h4" component="h4" mb={3}>
             Men
           </Typography>
           <Showcase content={showcaseMen} />
 
-          <Typography variant="h4" component="h4" sx={{ marginBottom: '2rem' }}>
+          <Typography variant="h4" component="h4" mb={3}>
             Womens
           </Typography>
           <Showcase content={showcaseWomen} />
