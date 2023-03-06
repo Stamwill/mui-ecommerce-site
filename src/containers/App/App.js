@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
+import AppDrawer from './partials/AppDrawer'
 import { showcaseMen, showcaseWomen, homeImageDivider } from 'api/mock'
 import { Typography } from '@mui/material'
 import { styled, Container, Box } from '@mui/system'
@@ -23,6 +24,7 @@ const App = () => {
 
       <Hero />
       <Container maxWidth="md">
+        <AppDrawer />
         <MuiCarousel />
       </Container>
 
