@@ -36,7 +36,8 @@ const HideBig = styled('div')(({ theme }) => ({
   },
 }))
 
-function Navbar() {
+function Navbar(props) {
+  const { toggleBurger } = props
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'black' }}>
@@ -63,7 +64,7 @@ function Navbar() {
                 </IconButton>
 
                 <HideBig>
-                  <IconButton size="large" color="inherit">
+                  <IconButton size="large" color="inherit" onClick={toggleBurger}>
                     <MenuIcon />
                   </IconButton>
                 </HideBig>
