@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { navigation } from 'api/mock'
 import { styled } from '@mui/material/styles'
 import { AppBar, Box, Typography, Toolbar, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -37,7 +36,7 @@ const HideBig = styled('div')(({ theme }) => ({
 }))
 
 function Navbar(props) {
-  const { toggleBurger } = props
+  const { toggleBurger, navigation } = props
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'black' }}>
