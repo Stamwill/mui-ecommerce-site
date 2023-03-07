@@ -2,6 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import { Typography } from '@mui/material'
 import { styled } from '@mui/material'
+import ShowItem from 'blocks/ShowItem'
 
 const ImgContainer = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -19,6 +20,11 @@ const ImgContainer = styled('div')(({ theme }) => ({
 function Showcase(props) {
   const { title, description, img } = props
 
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => {
+    setOpen((prevState) => !prevState)
+  }
+
   return (
     <section
       style={{
@@ -28,7 +34,7 @@ function Showcase(props) {
         alignItems: 'center',
       }}
     >
-      <ImgContainer>
+      <ImgContainer onClick={handleOpen}>
         <Image src={img} alt="test" fill sizes="(max-width: 100%)" style={{ objectFit: 'cover' }} />
       </ImgContainer>
 
@@ -39,6 +45,8 @@ function Showcase(props) {
       <Typography pb={2} sx={{ textAlign: 'center' }}>
         {description}
       </Typography>
+
+      <ShowItem handleOpen={handleOpen} open={open} img={img} title={title} />
     </section>
   )
 }
