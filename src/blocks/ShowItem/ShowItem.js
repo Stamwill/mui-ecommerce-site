@@ -32,6 +32,13 @@ const ImgContainer = styled('div')(({ theme }) => ({
   },
 }))
 
+const TextContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
+  marginTop: 25,
+}))
+
 const ShowItem = (props) => {
   const { open, handleOpen, img, title } = props
 
@@ -49,13 +56,15 @@ const ShowItem = (props) => {
             <Image src={img} alt="" fill />
           </ImgContainer>
 
-          <Typography variant="h6" component="h2">
-            {title}
-          </Typography>
+          <TextContainer>
+            <Typography variant="h6" component="h2">
+              {title}
+            </Typography>
 
-          <Typography sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+            <Typography sx={{ mt: 2 }}>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </Typography>
+          </TextContainer>
         </Box>
       </Modal>
     </div>
