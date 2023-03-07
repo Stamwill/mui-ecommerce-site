@@ -11,7 +11,7 @@ import {
 import CloseIcon from '@mui/icons-material/Close'
 
 const AppDrawer = (props) => {
-  const { open, toggleBurger } = props
+  const { open, toggleBurger, navigation } = props
 
   const list = (anchor) => (
     <Box sx={{ width: anchor === 'top' || anchor === 'bottom' ? '100%' : 250 }}>
@@ -20,10 +20,10 @@ const AppDrawer = (props) => {
           <CloseIcon />
         </IconButton>
 
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
-          <ListItem key={text} disablePadding>
+        {navigation.map((item, idx) => (
+          <ListItem key={idx} disablePadding>
             <ListItemButton>
-              <ListItemText primary={text} />
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
