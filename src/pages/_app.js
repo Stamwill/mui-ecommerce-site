@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { GlobalProvider } from 'api/GlobalContext'
+import { navigation } from 'api/mock'
 import Navbar from 'blocks/Navbar'
 import Footer from 'blocks/Footer'
 import AppDrawer from 'containers/App/partials/AppDrawer'
@@ -11,7 +12,6 @@ export default function App({ Component, pageProps }) {
 
   const toggleBurger = () => {
     setOpen((prevState) => !prevState)
-    console.log(open)
   }
   return (
     <GlobalProvider>
@@ -20,8 +20,8 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <header>
-        <Navbar open={open} toggleBurger={toggleBurger} />
-        <AppDrawer open={open} toggleBurger={toggleBurger} />
+        <Navbar open={open} toggleBurger={toggleBurger} navigation={navigation} />
+        <AppDrawer open={open} toggleBurger={toggleBurger} navigation={navigation} />
       </header>
 
       <main>
