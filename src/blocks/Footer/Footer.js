@@ -1,4 +1,5 @@
 import * as React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { navigation } from 'api/mock'
 import { styled } from '@mui/material'
@@ -41,6 +42,10 @@ function Footer() {
       </NavItems>
     </FooterRoot>
   )
+}
+
+Footer.propTypes = {
+  navigation: PropTypes.array,
 }
 
 export default Footer
