@@ -10,15 +10,16 @@ import {
   ListItemText,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { GlobalStateContext } from 'contexts/Global'
+import { GlobalStateContext, GlobalHandlersContext } from 'contexts/Global'
 
 const AppDrawer = (props) => {
   const { menuOpen } = React.useContext(GlobalStateContext)
+  const { handleMenu } = React.useContext(GlobalHandlersContext)
 
   const list = (anchor) => (
     <Box sx={{ width: anchor === 'top' || anchor === 'bottom' ? '100%' : 250 }}>
       <List>
-        <IconButton>
+        <IconButton onClick={handleMenu}>
           <CloseIcon />
         </IconButton>
 
