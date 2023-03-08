@@ -5,6 +5,7 @@ import Navbar from 'blocks/Navbar'
 import Footer from 'blocks/Footer'
 import AppDrawer from 'containers/App/partials/AppDrawer'
 import 'styles/globals.css'
+import ShoppingBasket from 'containers/ShoppingCart/ShoppingBasket'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }) {
       <header>
         <Navbar />
         <AppDrawer />
+        <ShoppingBasket />
       </header>
 
       <main>
