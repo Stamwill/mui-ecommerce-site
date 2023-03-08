@@ -15,12 +15,19 @@ const ImgContainer = styled('div')(({ theme }) => ({
 }))
 
 const App = () => {
+  const [open, setOpen] = React.useState(false)
+  let [basket, setBasket] = React.useState(0)
+
+  const toggleBurger = () => {
+    setOpen((prevState) => !prevState)
+  }
+
+  const handleBasket = () => {
+    setBasket((basket = basket + 1))
+    console.log('clicked', basket)
+  }
   return (
     <div>
-      <header>
-        <title>Mui Ecommerce Site</title>
-      </header>
-
       <Hero />
       <Container maxWidth="md">
         <MuiCarousel />
@@ -40,7 +47,7 @@ const App = () => {
         </Box>
       </Container>
 
-      <ImgContainer>
+      <ImgContainer onClick={() => handleBasket}>
         <Image src={homeImageDivider} fill alt="test" style={{ objectFit: 'cover' }} />
       </ImgContainer>
     </div>
