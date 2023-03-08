@@ -38,7 +38,7 @@ const HideBig = styled('div')(({ theme }) => ({
 }))
 
 function Navbar(props) {
-  const { handleMenu } = React.useContext(GlobalHandlersContext)
+  const { handleMenu, handleBasket } = React.useContext(GlobalHandlersContext)
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -61,7 +61,7 @@ function Navbar(props) {
 
             <IconContainer>
               <Box sx={{ display: 'flex' }}>
-                <IconButton size="medium" color="inherit">
+                <IconButton size="medium" color="inherit" onClick={handleBasket}>
                   <ShoppingCart />
                 </IconButton>
 
