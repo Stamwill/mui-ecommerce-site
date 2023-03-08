@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { navigation } from 'api/mock'
 import {
   Box,
   Drawer,
@@ -9,14 +10,15 @@ import {
   ListItemText,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
+import { GlobalStateContext } from 'contexts/Global'
 
 const AppDrawer = (props) => {
-  const { open, toggleBurger, navigation } = props
+  const { menuOpen } = React.useContext(GlobalStateContext)
 
   const list = (anchor) => (
     <Box sx={{ width: anchor === 'top' || anchor === 'bottom' ? '100%' : 250 }}>
       <List>
-        <IconButton onClick={toggleBurger}>
+        <IconButton>
           <CloseIcon />
         </IconButton>
 
@@ -36,7 +38,7 @@ const AppDrawer = (props) => {
       <div>
         {['top'].map((anchor) => (
           <React.Fragment key={anchor}>
-            <Drawer anchor={anchor} open={open} onClose={toggleBurger}>
+            <Drawer anchor={anchor} open={menuOpen}>
               {list(anchor)}
             </Drawer>
           </React.Fragment>
