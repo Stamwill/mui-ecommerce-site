@@ -1,4 +1,6 @@
 import * as React from 'react'
+import { navigation } from 'api/mock'
+import { GlobalHandlersContext, GlobalStateContext } from 'contexts/Global'
 import { styled } from '@mui/material/styles'
 import { AppBar, Box, Typography, Toolbar, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -36,7 +38,8 @@ const HideBig = styled('div')(({ theme }) => ({
 }))
 
 function Navbar(props) {
-  const { toggleBurger, navigation } = props
+  const { handleMenu } = React.useContext(GlobalHandlersContext)
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'black' }}>
@@ -63,7 +66,7 @@ function Navbar(props) {
                 </IconButton>
 
                 <HideBig>
-                  <IconButton size="large" color="inherit" onClick={toggleBurger}>
+                  <IconButton size="large" color="inherit" onClick={handleMenu}>
                     <MenuIcon />
                   </IconButton>
                 </HideBig>
