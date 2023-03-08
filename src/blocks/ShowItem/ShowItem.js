@@ -2,6 +2,7 @@ import * as React from 'react'
 import { styled, Box, Typography, Modal, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import Image from 'next/image'
+import Btn from 'components/Btn'
 
 const boxStyle = {
   display: 'flex',
@@ -39,6 +40,10 @@ const TextContainer = styled('div')(({ theme }) => ({
   marginTop: 25,
 }))
 
+const BtnContainer = styled('div')(({ theme }) => ({
+  marginTop: 25,
+}))
+
 const ShowItem = (props) => {
   const { open, handleOpen, img, title } = props
 
@@ -65,6 +70,10 @@ const ShowItem = (props) => {
               Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
             </Typography>
           </TextContainer>
+
+          <BtnContainer>
+            <Btn />
+          </BtnContainer>
         </Box>
       </Modal>
     </div>
