@@ -15,17 +15,6 @@ const ImgContainer = styled('div')(({ theme }) => ({
 }))
 
 const App = () => {
-  const [open, setOpen] = React.useState(false)
-  let [basket, setBasket] = React.useState(0)
-
-  const toggleBurger = () => {
-    setOpen((prevState) => !prevState)
-  }
-
-  const handleBasket = () => {
-    setBasket((basket = basket + 1))
-    console.log('clicked', basket)
-  }
   return (
     <div>
       <Hero />
@@ -47,7 +36,7 @@ const App = () => {
         </Box>
       </Container>
 
-      <ImgContainer onClick={() => handleBasket}>
+      <ImgContainer>
         <Image src={homeImageDivider} fill alt="test" style={{ objectFit: 'cover' }} />
       </ImgContainer>
     </div>
