@@ -6,12 +6,16 @@ export const GlobalHandlersContext = React.createContext({})
 
 export const GlobalProvider = ({ children }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
-  const [basketOpen, setBasketOpen] = React.useState(0)
+  const [basketOpen, setBasketOpen] = React.useState(false)
+
   const handleMenu = React.useCallback(() => {
     setMenuOpen((prevState) => !prevState)
     setBasketOpen(false)
-    console.log('clicked')
   }, [])
+
+  const handleBasket = React.useCallback(() => {
+    setBasketOpen((prevState) => !prevState)
+  })
 
   const stateContext = React.useMemo(() => ({
     menuOpen,
@@ -20,6 +24,7 @@ export const GlobalProvider = ({ children }) => {
 
   const handlersContext = React.useMemo(() => ({
     handleMenu,
+    handleBasket,
   }))
 
   return (
