@@ -13,6 +13,7 @@ const FooterRoot = styled('footer')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    height: '30vh',
   },
 }))
 
